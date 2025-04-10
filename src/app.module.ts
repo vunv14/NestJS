@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { User } from './user/user.entity';
 import { UserModule } from './modules/user/user.module';
 import { APP_PIPE } from '@nestjs/core';
+import { FirestoreModule } from './config/firestore/firestore.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -18,6 +19,7 @@ import { APP_PIPE } from '@nestjs/core';
       synchronize: true,
     }),
     UserModule,
+    FirestoreModule,
   ],
   controllers: [AppController],
   providers: [
